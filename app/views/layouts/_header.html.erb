@@ -15,7 +15,17 @@
 	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	    <ul class="nav navbar-nav navbar-right">
 
-	          <li><button type="button" class="btn btn-success navbar-btn">Sign in</button></li>
+	      <% if user_signed_in? %>
+          <li><%= link_to "Account Settings", edit_user_registration_path %></li>
+          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+	      <% else %>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
+          <li>
+          	<button type="button" class="btn btn-success navbar-btn">
+          		<%= link_to "Sign in", new_user_session_path %>
+          	</button>
+          </li>
+	      <% end %>
 
 	    </ul>
 	  </div><!-- /.navbar-collapse -->
