@@ -54,7 +54,7 @@ class TasksController < ApplicationController
     
     def set_task
       @task = current_user.tasks.find_by(id: params[:id])
-      redirect_to tasks_path, notice: "Not authorized to fiddle with other users tasks" if @task.nil?
+      redirect_to tasks_path, notice: "Invalid task." if @task.nil?
     end
 
     def task_params
