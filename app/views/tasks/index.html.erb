@@ -3,8 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>Description</th>
       <th>Completed</th>
+      <th>Description</th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,10 +14,16 @@
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
-        <td><%= task.description %></td>
-        <td><%= task.completed %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td>
+          <%= best_in_place task, 
+           :completed, 
+           type: :checkbox, 
+           collection: [raw("<i class='glyphicon glyphicon-unchecked'></i>"), 
+                        raw("<i class='glyphicon glyphicon-check'></i>")] %>
+        </td>
+        <td><%= best_in_place task, :description %></td>
+        <!-- <td><%= link_to 'Show', task %></td>
+        <td><%= link_to 'Edit', edit_task_path(task) %></td> -->
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
