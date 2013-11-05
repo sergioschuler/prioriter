@@ -6,15 +6,15 @@ class TasksController < ApplicationController
     @tasks = current_user.tasks.all
   end
 
-  def show
-  end
+  #def show
+  #end
 
   def new
     @task = current_user.tasks.build
   end
 
-  def edit
-  end
+  #def edit
+  #end
 
   def create
     @task = current_user.tasks.build(task_params)
