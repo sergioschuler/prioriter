@@ -1,3 +1,29 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.task {
+	font-size: 					1.3em;
+	padding-bottom: 		0.4em;
+}
+
+.destroy-btn {
+	opacity: 						0;
+}
+
+.task:hover .destroy-btn {
+	opacity:						1;
+}
+
+.input_field input {
+	-webkit-appearance: none;
+	outline: 						none;
+	border: 						none;
+	border-bottom: 			1px dotted #b3b3b3;
+}
+
+.input_field:hover {
+	-webkit-appearance: none;
+	outline: 						none;
+	border: 						none;
+	border-bottom: 			1px dotted #b3b3b3;	
+}

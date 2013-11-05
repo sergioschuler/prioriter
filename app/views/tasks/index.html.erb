@@ -1,35 +1,32 @@
-<h1>Listing tasks</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Completed</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tasks.each do |task| %>
-      <tr>
-        <td>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 text-center col-centered">
+      <h1>Today's To-do</h1>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-centered">
+      <%= link_to 'New Task', new_task_path %>
+    </div>
+  </div>
+  <% @tasks.each do |task| %>
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-centered">
+        <div class="task">
           <%= best_in_place task, 
-           :completed, 
-           type: :checkbox, 
-           collection: [raw("<i class='glyphicon glyphicon-unchecked'></i>"), 
-                        raw("<i class='glyphicon glyphicon-check'></i>")] %>
-        </td>
-        <td><%= best_in_place task, :description %></td>
-        <!-- <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td> -->
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+               :completed, 
+               type: :checkbox, 
+               collection: [raw("<i class='glyphicon glyphicon-unchecked'></i>"), 
+                            raw("<i class='glyphicon glyphicon-check'></i>")] %>
+            
+          <%= best_in_place task, :description, { :classes => "input_field" } %>
 
-<br>
+          <%= link_to '', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "destroy-btn glyphicon glyphicon-trash" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  
+</div><!-- /.container -->
 
-<%= link_to 'New Task', new_task_path %>
