@@ -10,14 +10,14 @@
       <%= link_to 'New Task', new_task_path %>
     </div>
   </div>
-  <%= render 'todo', :tasks => @tasks %>
+  <%= render 'todo', :tasks => @tasks, :task_class => "todo_task" %>
   
   <div class="row">
     <div class="col-xs-12 col-md-8 text-center col-centered">
       <h3>Completed</h3>
     </div>
   </div>
-  <%= render 'todo', :tasks => @completed_tasks %>
+  <%= render 'todo', :tasks => @completed_tasks, :task_class => "completed_task" %>
   
 </div><!-- /.container -->
 

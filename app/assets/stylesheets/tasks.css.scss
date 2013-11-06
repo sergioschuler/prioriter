@@ -27,3 +27,9 @@
 .todo_task:hover .destroy-btn {
 	opacity:						1;
 }
+
+.completed_task {
+	font-size: 					1em;
+	padding-bottom: 		0.4em;
+	text-decoration:		line-through;
+}
