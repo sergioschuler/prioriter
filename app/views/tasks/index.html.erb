@@ -22,7 +22,9 @@
             
           <%= best_in_place task, :description, { :classes => "input_field" } %>
 
-          <%= link_to '', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "destroy-btn glyphicon glyphicon-trash" %>
+          <%= link_to '', task, method: :delete, 
+                                data: { confirm: 'Are you sure?' }, 
+                                class: "destroy-btn glyphicon glyphicon-trash" %>
         </div>
       </div>
     </div>
