@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 text-center col-centered">
+      <h1>Today's To-do</h1>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-centered">
+      <% if new_task %>
+        <%= render 'new_task_form' %>
+      <% else %>
+        <%= link_to 'New Task', new_task_path %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= render 'task_listing', :tasks => @tasks, :task_class => "todo_task" %>
+  
+  <div class="row">
+    <div class="col-xs-12 col-md-8 text-center col-centered">
+      <h3>Completed</h3>
+    </div>
+  </div>
+  <%= render 'task_listing', :tasks => @completed_tasks, :task_class => "completed_task" %>
+  
+</div><!-- /.container -->
+
