@@ -1,0 +1,19 @@
+<% tasks.each do |task| %>
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-centered">
+      <div class="todo_task">
+        <%= best_in_place task, 
+             :completed, 
+             type: :checkbox, 
+             collection: [raw("<i class='glyphicon glyphicon-unchecked'></i>"), 
+                          raw("<i class='glyphicon glyphicon-check'></i>")] %>
+          
+        <%= best_in_place task, :description, { :classes => "input_field" } %>
+
+        <%= link_to '', task, method: :delete, 
+                              data: { confirm: 'Are you sure?' }, 
+                              class: "destroy-btn glyphicon glyphicon-trash" %>
+      </div>
+    </div>
+  </div>
+<% end %>

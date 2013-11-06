@@ -3,7 +3,8 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tasks = current_user.tasks.all
+    @tasks = current_user.tasks.where(completed: false)
+    @completed_tasks = current_user.tasks.where(completed: true)
   end
 
   #def show
