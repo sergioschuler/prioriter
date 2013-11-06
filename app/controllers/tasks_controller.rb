@@ -4,7 +4,7 @@ class TasksController < ApplicationController
 
   def index
     @tasks = current_user.tasks.where(completed: false)
-    @completed_tasks = current_user.tasks.where(completed: true)
+    @completed_tasks = current_user.tasks.where(completed: true).order('updated_at DESC').limit(10)
   end
 
   #def show
