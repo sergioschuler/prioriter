@@ -10,7 +10,7 @@
       <% if new_task %>
         <%= render 'new_task_form' %>
       <% else %>
-        <%= link_to 'New Task', new_task_path %>
+        <%= link_to 'Add new task', new_task_path %>
       <% end %>
     </div>
   </div>
@@ -19,10 +19,14 @@
   
   <div class="row">
     <div class="col-xs-12 col-md-8 text-center col-centered">
-      <h3>Completed recently</h3>
+        <h3 data-toggle="collapse" data-parent="#accordion" href="#completed_tasks">
+          <i class="glyphicon glyphicon-chevron-right chevron" id="collapsable-chevron"></i>
+          Completed recently
+        </h3>
     </div>
   </div>
+  <div id="completed_tasks" class="panel-collapse collapse">
   <%= render 'task_listing', :tasks => @completed_tasks, :task_class => "completed_task" %>
-  
+  </div>
 </div><!-- /.container -->
 
