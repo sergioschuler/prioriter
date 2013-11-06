@@ -5,6 +5,7 @@
     </div>
   </div>
   
+  <%= render 'task_listing', :tasks => @tasks, :task_class => "todo_task" %>
   <div class="row">
     <div class="col-xs-12 col-md-8 col-centered">
       <% if new_task %>
@@ -14,8 +15,6 @@
       <% end %>
     </div>
   </div>
-
-  <%= render 'task_listing', :tasks => @tasks, :task_class => "todo_task" %>
   
   <div class="row">
     <div class="col-xs-12 col-md-8 text-center col-centered">
