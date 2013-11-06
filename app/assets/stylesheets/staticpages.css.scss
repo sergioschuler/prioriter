@@ -1,3 +1,39 @@
 // Place all the styles related to the staticpages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.home-jumbotron {
+	background-image:			url('background_jumbotron.jpg');
+	background-repeat: 		no-repeat;
+	background-size: 			100%;
+	margin-bottom:				100px;
+	
+	h1 {
+		padding-top: 				50px;
+	}
+
+	.btn {
+		margin-top: 				30px;
+	}
+}
+
+.container-features {
+	h3 {
+		padding-bottom:				100px;
+		color:								#27ae60;
+	}
+
+	h4 {
+		color:								#27ae60;
+		padding-top:					50px;
+	}
+
+	img {
+		height: 							99px;
+	}
+
+	p {
+		margin-bottom:				100px;
+		padding-left:					20px;
+		padding-right:					20px;
+	}
+}

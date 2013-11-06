@@ -1,7 +1,73 @@
-<div class="container">
-	<div class="jumbotron text-center">
-		  <h1>Zen the shit out of your to-do list.</h1>
-		  <p>Prioriter is a free, no-frills to-do list. Add what you need to do and get shit done.</p>
-		  <p><%= link_to "Register", new_user_registration_path, class: "btn btn-primary btn-lg", role: "button" %></p>
+<div class="jumbotron home-jumbotron text-center">
+	<div class="container">
+		  <h1>Zen the sh*t out of your to-do list</h1>
+		  <p>Prioriter is a free, no-frills to-do list. 
+		  	Take away all the bells and whisltles and productivity is what is left.</p>
+		  <p><%= link_to "Register", new_user_registration_path, class: "btn btn-success btn-lg", role: "button" %></p>
 	</div>
 </div>
+
+<div class="container container-features text-center">
+	<div class="row">
+		<div class="col-xs-12">
+			<h3>Simple to-do app for people who don't want to spend time with to-do admin</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-4">
+			<div class="row">
+				<div class="col-xs-12">
+					<%= image_tag 'create_task.gif' %>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<h4>Add tasks</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<p>Add all the tasks you want to complete today and today only.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-4">
+			<div class="row">
+				<div class="col-xs-12">
+					<%= image_tag 'complete_task.gif' %>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<h4>Complete tasks</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<p>Complete your today's to-do until they are all gone. Focus and get sh*t done.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-4">
+			<div class="row">
+				<div class="col-xs-12">
+					<%= image_tag 'zen_master.gif' %>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<h4>That's it</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<p>No social sharing, multiple lists and shenanigans.
+						After your today's to-do is empty, you can relax.</p>
+				</div>
+			</div>
+		</div>
+	</div><!--/.row-->
+</div><!--/.container-->
