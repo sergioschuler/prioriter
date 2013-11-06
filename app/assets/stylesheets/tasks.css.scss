@@ -5,14 +5,14 @@
 	opacity: 						0;
 }
 
-.input_field input {
+.input_field {
 	-webkit-appearance: none;
 	outline: 						none;
 	border: 						none;
 	border-bottom: 			1px dotted #b3b3b3;
 }
 
-.input_field:hover {
+.pre_input_field:hover {
 	-webkit-appearance: none;
 	outline: 						none;
 	border: 						none;
@@ -22,6 +22,7 @@
 .todo_task {
 	font-size: 					1.3em;
 	padding-bottom: 		0.4em;
+	cursor: 						pointer;
 }
 
 .todo_task:hover .destroy-btn {

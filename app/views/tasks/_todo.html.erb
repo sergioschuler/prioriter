@@ -8,7 +8,7 @@
              collection: [raw("<i class='glyphicon glyphicon-unchecked'></i>"), 
                           raw("<i class='glyphicon glyphicon-check'></i>")] %>
           
-        <%= best_in_place task, :description, { :classes => "input_field" } %>
+        <%= best_in_place task, :description, { :classes => "pre_input_field", :inner_class => "input_field" } %>
 
         <%= link_to '', task, method: :delete, 
                               data: { confirm: 'Are you sure?' }, 
