@@ -1,10 +1,3 @@
-.completed_task {
-	font-size: 					1em;
-	color:							gray;
-	padding-bottom: 		0.4em;
-	text-decoration:		line-through;
-}
-
 .destroy-btn {
 	opacity: 						0;
 }
@@ -24,15 +17,37 @@
 	border-bottom: 			1px dotted #b3b3b3;	
 }
 
-.todo_task {
+.task_list {
+	margin-left: 			0px;
+	padding-left:			0px;
+
+	ul, li {
+		list-style: 			none;
+	}
+}
+
+#task_completed {
+	font-size: 					1em;
+	color:							gray;
+	padding-bottom: 		0.4em;
+	text-decoration:		line-through;
+}
+
+#todo_task {
 	font-size: 					1.3em;
 	padding-bottom: 		0.4em;
 	cursor: 						pointer;
 }
 
-.todo_task:hover .destroy-btn {
+#todo_task:hover .destroy-btn {
 	opacity:						1;
 }
+
+
+
+
+
+
 
 .todo_task_col {
 	border-bottom-width:1px;

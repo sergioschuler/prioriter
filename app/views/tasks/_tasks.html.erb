@@ -5,7 +5,7 @@
     </div>
   </div>
   
-  <%= render 'task_listing', :tasks => @tasks, :task_class => "todo_task" %>
+  <%= render 'task_listing', :tasks => @tasks, :task_id => "todo_task" %>
   <div class="row">
     <div class="col-xs-12 col-md-8 col-centered">
       <% if new_task %>
@@ -25,7 +25,7 @@
     </div>
   </div>
   <div id="completed_tasks" class="panel-collapse collapse">
-  <%= render 'task_listing', :tasks => @completed_tasks, :task_class => "completed_task" %>
+  <%= render 'task_listing', :tasks => @completed_tasks, :task_id => "task_completed" %>
   </div>
 </div><!-- /.container -->
 

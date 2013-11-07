@@ -1,20 +1,22 @@
-<% tasks.each do |task| %>
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-centered <%= (task_class+"_col").gsub(/"/, '|') %>">
-      <div class=<%= task_class %>>
-        <%= best_in_place task, 
-             :completed, 
-             type: :checkbox, 
-             classes: 'task_checkbox',
-             collection: [raw("<i class='glyphicon glyphicon-unchecked'></i>"), 
-                          raw("<i class='glyphicon glyphicon-check'></i>")] %>
-          
-        <%= best_in_place task, :description, { :classes => "pre_input_field", :inner_class => "input_field" } %>
+<div class="row">
+  <div class="col-xs-12 col-md-8 col-centered">
+    <ul id=<%= task_id %> class="task_list">
+      <% tasks.each do |task| %>
+        <li>
+          <%= best_in_place task, 
+               :completed, 
+               type: :checkbox, 
+               classes: 'task_checkbox',
+               collection: [raw("<i class='glyphicon glyphicon-unchecked'></i>"), 
+                            raw("<i class='glyphicon glyphicon-check'></i>")] %>
+            
+          <%= best_in_place task, :description, { :classes => "pre_input_field", :inner_class => "input_field" } %>
 
-        <%= link_to '', task, method: :delete, 
-                              data: { confirm: 'Are you sure?' }, 
-                              class: "destroy-btn glyphicon glyphicon-trash" %>
-      </div>
-    </div>
+          <%= link_to '', task, method: :delete, 
+                                data: { confirm: 'Are you sure?' }, 
+                                class: "destroy-btn glyphicon glyphicon-trash" %>
+        </li>
+      <% end %>
+    </ul>
   </div>
-<% end %>
+</div>
