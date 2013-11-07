@@ -1,10 +1,9 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_tasks, only: [:index, :new]
 
   def index
-    @tasks = current_user.tasks.where(completed: false)
-    @completed_tasks = current_user.tasks.where(completed: true).order('updated_at DESC').limit(10)
   end
 
   #def show
@@ -12,7 +11,6 @@ class TasksController < ApplicationController
 
   def new
     @task = current_user.tasks.build
-    index
   end
 
   #def edit
@@ -57,6 +55,11 @@ class TasksController < ApplicationController
     def set_task
       @task = current_user.tasks.find_by(id: params[:id])
       redirect_to tasks_path, notice: "Invalid task." if @task.nil?
+    end
+
+    def set_tasks
+     @tasks = current_user.tasks.where(completed: false)
+     @completed_tasks = current_user.tasks.where(completed: true).order('updated_at DESC').limit(10)
     end
 
     def task_params
