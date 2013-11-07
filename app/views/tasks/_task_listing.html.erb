@@ -1,6 +1,6 @@
 <% tasks.each do |task| %>
   <div class="row">
-    <div class="col-xs-12 col-md-8 col-centered">
+    <div class="col-xs-12 col-md-8 col-centered <%= (task_class+"_col").gsub(/"/, '|') %>">
       <div class=<%= task_class %>>
         <%= best_in_place task, 
              :completed, 

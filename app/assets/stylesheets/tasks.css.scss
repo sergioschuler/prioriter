@@ -1,6 +1,10 @@
-// Place all the styles related to the tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.completed_task {
+	font-size: 					1em;
+	color:							gray;
+	padding-bottom: 		0.4em;
+	text-decoration:		line-through;
+}
+
 .destroy-btn {
 	opacity: 						0;
 }
@@ -10,6 +14,7 @@
 	outline: 						none;
 	border: 						none;
 	border-bottom: 			1px dotted #b3b3b3;
+	width:							90%;
 }
 
 .pre_input_field:hover {
@@ -29,9 +34,9 @@
 	opacity:						1;
 }
 
-.completed_task {
-	font-size: 					1em;
-	color:							gray;
-	padding-bottom: 		0.4em;
-	text-decoration:		line-through;
+.todo_task_col {
+	border-bottom-width:1px;
+	border-bottom-style:dashed;
+	border-bottom-color:gray;
+	margin-bottom: 10px;
 }
