@@ -2,10 +2,20 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
-  $('.best_in_place').best_in_place() # Required for best in place gem
+  # Required for best in place gem
+  $('.best_in_place').best_in_place()
 
-  $(".task_checkbox").bind('ajax:success', ->  location.reload() ) # Reload when task checklist is edited
+  # Reload page when task checklist is edited
+  $(".task_checkbox").bind('ajax:success', ->  location.reload() )
 
+  # Drag and drop elements of the task list
+  $('#todo_task').sortable(
+    axis: 'y'
+    update: ->
+      $.post($(this).data('update-url'), $(this).sortable('serialize'))
+  );    
+
+  # change the chevron when collapsing the list
   $('#completed_tasks').on('show.bs.collapse', ->
     $(".chevron").addClass('glyphicon-chevron-down').removeClass('glyphicon-chevron-right')
   )

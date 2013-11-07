@@ -50,6 +50,13 @@ class TasksController < ApplicationController
     end
   end
 
+  def sort
+    params[:task].each_with_index do |id, index|
+      Task.update_all({position: index+1}, {id: id})
+    end
+    render nothing:true
+  end
+
   private
     
     def set_task
@@ -58,12 +65,11 @@ class TasksController < ApplicationController
     end
 
     def set_tasks
-     @tasks = current_user.tasks.where(completed: false)
+     @tasks = current_user.tasks.where(completed: false).order('position')
      @completed_tasks = current_user.tasks.where(completed: true).order('updated_at DESC').limit(10)
     end
 
     def task_params
-      params.require(:task).permit(:description, :completed)
+      params.require(:task).permit(:description, :completed, :position)
     end
-
 end

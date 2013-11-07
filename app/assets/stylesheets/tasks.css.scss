@@ -1,5 +1,28 @@
-.destroy-btn {
-	opacity: 						0;
+.control_bin {
+	display: 										none;
+	position: 									absolute;
+	color: 											gray;
+	font-size:									0.7em;
+	left: 											-35px;
+	min-height:									25px;
+	min-width:									50px;
+	padding-left:			  				10px;
+	padding-top: 								4px;
+	border-top-left-radius: 		20px;
+	border-bottom-left-radius:	20px;
+	-webkit-box-shadow: 				-1px 0 1px #2ecc71;
+	-moz-box-shadow: 						-1px 0 1px #2ecc71;
+	box-shadow: 								-1px 0 1px #2ecc71;
+
+	.destroy-btn {
+		margin-right: 			5px;
+	}
+}
+
+.task:hover {
+	.control_bin {
+		display: 						inline-block;
+	}
 }
 
 .input_field {
@@ -37,21 +60,16 @@
 	font-size: 					1.3em;
 	padding-bottom: 		0.4em;
 	cursor: 						pointer;
+
+	.handle {
+  cursor: move;
+	}
 }
 
-#todo_task:hover .destroy-btn {
-	opacity:						1;
-}
-
-
-
-
-
-
-
-.todo_task_col {
-	border-bottom-width:1px;
-	border-bottom-style:dashed;
-	border-bottom-color:gray;
-	margin-bottom: 10px;
+#task_completed {
+	&:hover {
+		.control_bin {
+			display: 				none;
+		}
+	}
 }

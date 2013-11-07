@@ -1,5 +1,7 @@
 Prioriter::Application.routes.draw do
-  resources :tasks
+  resources :tasks do
+    collection { post :sort }
+  end
 
   devise_for :users
   root 'staticpages#index'
