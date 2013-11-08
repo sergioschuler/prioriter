@@ -13,7 +13,11 @@ jQuery ->
     axis: 'y'
     update: ->
       $.post($(this).data('update-url'), $(this).sortable('serialize'))
-  );    
+  );
+
+  # Datepicker
+  $('#task_deadline').datepicker
+    dateFormat: 'yy-mm-dd'    
 
   # change the chevron when collapsing the list
   $('#completed_tasks').on('show.bs.collapse', ->

@@ -13,6 +13,7 @@
   <div class="form-group">
     <%= f.check_box :completed, class: "hidden" %>
     <%= f.text_field :description, class: "form-control", placeholder: "Write your task..." %>
-    <%= f.submit "Create", class: "hidden" %>
+    <%= f.text_field :deadline, class: "form-control", placeholder: "Choose date..." %>
+    <%= f.submit "Create" %>
   </div>
 <% end %>

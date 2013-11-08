@@ -13,6 +13,7 @@ gem "bootstrap-sass", "~> 3.0.0.0"
 gem 'best_in_place', github: "bernat/best_in_place"
 gem 'devise', '~> 3.1.1'
 gem "jquery-ui-rails", "~> 4.1.0"
+gem "jquery-turbolinks", "~> 2.0.1"
 
 group :development, :test do
 	gem 'sqlite3'
