@@ -1,1 +1,39 @@
-<%= render 'tasks', new_task: false %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-centered">
+      <%= link_to 'Add new task', new_task_path, id: "new_link", remote: true %>
+
+      <h1>Today's To-do</h1>
+  
+		  <ul id="todays_tasks" data-update-url="<%= sort_tasks_url %>">
+		  	<% @todays_tasks.each do |task| %>
+		  		<%= render 'task', task: task %>
+		  	<% end %>
+		  </ul>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-centered">
+    	<h1>Not Today</h1>
+
+		  <ul id="future_tasks" data-update-url="<%= sort_tasks_url %>">
+		  	<% @future_tasks.each do |task| %>
+		  		<%= render 'task', task: task %>
+		  	<% end %>
+		  </ul>
+		</div>
+	</div>
+
+	<div class="row">
+    <div class="col-xs-12 col-md-8 col-centered">
+    	<h1>Completed</h1>
+		  <ul id="completed_tasks" data-update-url="<%= sort_tasks_url %>">
+		  	<% @completed_tasks.each do |task| %>
+		  		<%= render 'task', task: task %>
+		  	<% end %>
+		  </ul>
+		</div>
+	</div>
+</div>

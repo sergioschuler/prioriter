@@ -1,0 +1,5 @@
+<% if @task.completed %>
+  $('#task_<%= @task.id %>').appendTo('#completed_tasks');
+<% else %>
+  $('#task_<%= @task.id %>').appendTo('<%= j list_id %>');
+<% end %>

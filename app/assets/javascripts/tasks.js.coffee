@@ -5,19 +5,30 @@ jQuery ->
   # Required for best in place gem
   $('.best_in_place').best_in_place()
 
-  # Reload page when task checklist is edited
-  $(".task_checkbox").bind('ajax:success', ->  location.reload() )
-
   # Drag and drop elements of the task list
-  $('#todo_task').sortable(
+  $('#todays_tasks, #future_tasks').sortable(
     axis: 'y'
     update: ->
       $.post($(this).data('update-url'), $(this).sortable('serialize'))
   );
 
+  # Remove update buttons and listens to checkbox
+  jQuery.fn.submitOnCheck = ->
+   @find('input[type=submit]').remove()
+   @find('input[type=checkbox]').click ->
+     $(this).parent('form').submit()
+   this
+ 
+  jQuery ->
+   $('.edit_task').submitOnCheck()
+
   # Datepicker
-  $('#task_deadline').datepicker
-    dateFormat: 'yy-mm-dd'    
+  $('body').on('focus', "#task_deadline", ->
+    $(this).datepicker
+      dateFormat: 'yy-mm-dd'
+  )
+  #$('#task_deadline').datepicker
+  #  dateFormat: 'yy-mm-dd'    
 
   # change the chevron when collapsing the list
   $('#completed_tasks').on('show.bs.collapse', ->

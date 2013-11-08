@@ -1,62 +1,54 @@
-.control_bin {
-	display: 										none;
-	position: 									absolute;
-	color: 											gray;
-	font-size:									0.7em;
-	left: 											-35px;
-	min-height:									25px;
-	min-width:									50px;
-	padding-left:			  				10px;
-	padding-top: 								4px;
-	border-top-left-radius: 		20px;
-	border-bottom-left-radius:	20px;
-	-webkit-box-shadow: 				-1px 0 1px #2ecc71;
-	-moz-box-shadow: 						-1px 0 1px #2ecc71;
-	box-shadow: 								-1px 0 1px #2ecc71;
-
-	.destroy-btn {
-		margin-right: 			5px;
-	}
-}
-
-.task:hover {
-	.control_bin {
-		display: 						inline-block;
-	}
-}
-
-.input_field {
-	-webkit-appearance: none;
-	outline: 						none;
-	border: 						none;
-	border-bottom: 			1px dotted #b3b3b3;
-	width:							90%;
-}
-
-.pre_input_field:hover {
-	-webkit-appearance: none;
-	outline: 						none;
-	border: 						none;
-	border-bottom: 			1px dotted #b3b3b3;	
-}
-
-.task_list {
+@mixin task-list {
+	padding-left: 				0px;
 	margin-left: 				0px;
-	padding-left:				0px;
-
 	li {
 		list-style: 			none;
 	}
+	.control_bin {
+		display: 										none;
+		position: 									absolute;
+		color: 											gray;
+		font-size:									0.7em;
+		left: 											-35px;
+		min-height:									25px;
+		min-width:									50px;
+		padding-left:			  				10px;
+		padding-top: 								4px;
+		border-top-left-radius: 		20px;
+		border-bottom-left-radius:	20px;
+		-webkit-box-shadow: 				-1px 0 1px #2ecc71;
+		-moz-box-shadow: 						-1px 0 1px #2ecc71;
+		box-shadow: 								-1px 0 1px #2ecc71;
+
+		.destroy-btn {
+			margin-right: 			5px;
+		}
+	}
+	.input_field {
+		-webkit-appearance: none;
+		outline: 						none;
+		border: 						none;
+		border-bottom: 			1px dotted #b3b3b3;
+		width:							90%;
+	}
+
+	.pre_input_field:hover {
+		-webkit-appearance: none;
+		outline: 						none;
+		border: 						none;
+		border-bottom: 			1px dotted #b3b3b3;	
+	}
+	.edit_task {
+		display:						inline-block;
+	}	
 }
 
-#task_completed {
-	font-size: 					1em;
-	color:							gray;
-	padding-bottom: 		0.4em;
-	text-decoration:		line-through;
-}
-
-#todo_task {
+@mixin todo-task-list {
+	.task:hover {
+		.control_bin {
+			display: 						inline-block;
+		}
+	}
 	font-size: 					1.3em;
 	padding-bottom: 		0.4em;
 	cursor: 						pointer;
@@ -75,10 +67,34 @@
 	}
 }
 
-#task_completed {
-	&:hover {
-		.control_bin {
-			display: 				none;
-		}
+#todays_tasks {
+	@include task-list;
+	@include todo-task-list;
+}
+
+#future_tasks {
+	@include task-list;
+	@include todo-task-list;
+}
+
+#completed_tasks {
+	@include task-list;
+}
+
+#completed_tasks {
+	li {
+		font-size: 					1em;
+		color:							gray;
+		padding-bottom: 		0.4em;
+		text-decoration:		line-through;
+	}
+}
+
+.form-inline {
+	#task_description {
+		min-width:							550px;
+	}
+	#task_deadline {
+		max-width:							100px;
 	}
 }
