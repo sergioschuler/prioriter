@@ -26,9 +26,8 @@ jQuery ->
   $('body').on('focus', "#task_deadline", ->
     $(this).datepicker
       dateFormat: 'yy-mm-dd'
+      showButtonPanel: true    
   )
-  #$('#task_deadline').datepicker
-  #  dateFormat: 'yy-mm-dd'    
 
   # change the chevron when collapsing the list
   $('#completed_tasks').on('show.bs.collapse', ->
